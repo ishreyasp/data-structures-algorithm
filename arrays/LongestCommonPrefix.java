@@ -1,5 +1,5 @@
-class LongestSuffix {
-    public String longestSuffix(String[] strs) {
+class LongestCommonPrefix {
+    public String longestCommonPrefix(String[] strs) {
         if(strs==null || strs.length==0){
             return "";
         }
@@ -15,8 +15,8 @@ class LongestSuffix {
     }
 
     public static void main(String[] args) {
-        LongestSuffix longestSuffix = new LongestSuffix();
+        LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
         String[] strs = {"flower","flow","flight"};
-        System.out.println(longestSuffix.longestSuffix(strs));
+        System.out.println(longestCommonPrefix.longestCommonPrefix(strs));
     }
 }
