@@ -1,6 +1,5 @@
 /**
-Given an array of strings strs, group all anagrams together into sublists. 
-You may return the output in any order.
+Given an array of strings strs, group all anagrams together into sublists. You may return the output in any order.
 
 An anagram is a string that contains the exact same characters as another string, 
 but the order of the characters can be different.
@@ -12,13 +11,16 @@ Output: [["hat"],["act", "cat"],["stop", "pots", "tops"]]
 Example 2:
 Input: strs = ["x"]
 Output: [["x"]]
- */
 
-class GroupAnagrams {
+Example 3:
+Input: strs = [""]
+Output: [[""]]
+*/
+class GroupAnagram {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
 
-        for(String str : strs){
+        for(String str : strs) {
             int[] count = new int[26];
 
             for(char c : str.toCharArray()){
@@ -26,6 +28,7 @@ class GroupAnagrams {
             }
 
             String key = Arrays.toString(count);
+
             map.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
         }
 
@@ -33,7 +36,7 @@ class GroupAnagrams {
     }
 
     public static void main(String[] args) {
-        GroupAnagrams solution = new GroupAnagrams();
+        GroupAnagram solution = new GroupAnagram();
         String[] strs = {"act","pots","tops","cat","stop","hat"};
         List<List<String>> result = solution.groupAnagrams(strs);
         System.out.println(result);
