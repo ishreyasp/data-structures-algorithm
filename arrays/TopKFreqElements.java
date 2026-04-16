@@ -25,7 +25,7 @@ class TopKFreqElements {
         for(int key : freqMap.keySet()) {
             int freq = freqMap.get(key);
             if(buckets[freq] == null) {
-                buckets[freq] = new ArrayList();
+                buckets[freq] = new ArrayList<>();
             }
             buckets[freq].add(key);
         }
