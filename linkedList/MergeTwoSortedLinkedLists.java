@@ -17,7 +17,7 @@ Example 3:
 Input: list1 = [], list2 = []
 Output: []
  */
-public class MergeTwoSortedLinkedLists {
+class MergeTwoSortedLinkedLists {
     /**
  * Definition for singly-linked list.
  * public class ListNode {
