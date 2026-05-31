@@ -7,18 +7,17 @@ Output: 3
  */
 class MaxConsecutiveOnes {
     public int findMaxConsecutiveOnes(int[] nums) {
-        int maxCount = 0;
-        int count = 0;
+        int l = 0;
+        int maxLen = 0;
 
-        for (int num : nums) {
-            if (num == 1) {
-                count++;
-            } else {
-                maxCount = Math.max(maxCount, count);
-                count = 0;
+        for(int r = 0; r < nums.length; r++) {
+            if(nums[r] == 0) {
+                l = r + 1;
             }
+            maxLen = Math.max(maxLen, r - l + 1);
         }
-        return Math.max(maxCount, count);
+
+        return maxLen;
     }    
 
     public static void main(String[] args) {
